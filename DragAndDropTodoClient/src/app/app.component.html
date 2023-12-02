@@ -1,0 +1,73 @@
+<div class="container mt-4">
+  <h1 class="text-center mb-4" style="color: #303233; font-size: 36px; text-shadow: 2px 2px 4px #666; margin-bottom: 5rem;">To Do Application</h1>
+  <div class="example-container left" style="margin-top: 5rem;">
+    <h2 class="text-center">To do</h2>
+    <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="todos" [cdkDropListConnectedTo]="[doneList]"
+      class="example-list" (cdkDropListDropped)="drop1($event)">
+      <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item.work}}
+        <div>
+          <button mat-icon-button color="warn" (click)="deleteTodo(item.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+
+          <button mat-icon-button color="primary" (click)="showEditForm(item)">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="addBtn">
+      <button mat-fab extended class="add-button" (click)="showForm()">
+        <mat-icon>add</mat-icon>
+        Add
+      </button>
+    </div>
+  </div>
+
+  <div class="form">
+
+    <form class="example-form" #todoForm="ngForm" *ngIf="showAddForm" autocomplete="off">
+      <mat-form-field class="example-full-width">
+        <mat-label>To Do</mat-label>
+        <input matInput placeholder="Ex. Angular" value="Sushi" [(ngModel)]="request.work" name="newTodoWork">
+      </mat-form-field>
+      <button mat-button color="primary" (click)="addTodo()">Add Task</button>
+    </form>
+ 
+
+
+    <!-- Update form -->
+    <form class="example-form" #editForm="ngForm" *ngIf="editForm" autocomplete="off">
+      <mat-form-field class="example-full-width">
+        <mat-label>Edit To Do</mat-label>
+        <input matInput placeholder="Ex. Angular" [(ngModel)]="request.work" name="editTodoWork">
+      </mat-form-field>
+      <button mat-button color="primary" (click)="updateTodo()">Update</button>
+      <button mat-button color="warn" (click)="closeEditForm()">Cancel</button>
+    </form>
+    <!--Update form -->
+
+  </div>
+
+
+  <div>
+    <div class="example-container right" style="margin-top: 5rem;">
+      <h2 class="text-center">Done</h2>
+      <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="todos" [cdkDropListConnectedTo]="[todoList]"
+        class="example-list" (cdkDropListDropped)="drop2($event)">
+        <div class="example-box" *ngFor="let item of done" cdkDrag>{{item.work}}
+          <div>
+            <button mat-icon-button color="warn" (click)="deleteTodo(item.id)">
+              <mat-icon>delete</mat-icon>
+            </button>
+            <button mat-icon-button color="primary">
+              <mat-icon>edit</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
