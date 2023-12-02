@@ -28,5 +28,5 @@ Bu proje, Angular ve .NET Web API kullanılarak geliştirilen interaktif bir Tod
 
 1. Repoyu bilgisayarınıza klonlayın.
    ```sh
-   git clone https://github.com/kullaniciadi/angular-drag-drop-todo.git
+   git clone https://github.com/ahmetgl1/angular-drag-drop-todo.git
 
