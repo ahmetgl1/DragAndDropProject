@@ -2,7 +2,8 @@
 
 Bu proje, Angular ve .NET Web API kullanılarak geliştirilen interaktif bir Todo uygulamasıdır. Kullanıcılar, görevleri sürükleyip bırakarak sıralayabilir ve düzenleyebilirler.
 
-![Ekran Alıntısı](https://github.com/ahmetgl1/DragAndDrop/assets/81171832/92d48fab-78ee-44ed-8106-e005fefbde56)
+![Ekran Alıntısı](https://github.com/ahmetgl1/DragAndDropProject/assets/81171832/aa9f3c8c-89df-481c-bc76-02ec5d63c9bd)
+
 
 
 ## Özellikler
